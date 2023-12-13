@@ -91,7 +91,7 @@ func main() {
 					}
 					if lineNum == 28 && string(vals[lineNum][idx].value) == "807" {
 						println("len ", len(previousLine))
-						println("accessing previousline ", ind, "==>", string(previousLine[ind-1]))
+						println("accessing previousline ", ind, "==>", string(previousLine[ind]))
 					}
 					// My worst mistake, and a dumb one of course :
 					// I didn't realie 47 was /...
