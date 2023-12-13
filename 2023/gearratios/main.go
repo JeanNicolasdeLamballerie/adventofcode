@@ -106,8 +106,9 @@ func main() {
 		lineNum++
 		ind++
 		// println(lineNum, string(previousLine))
-		previousLine = append(previousLine, line)
+		// println("appending line", lineNum)
 		// println(len(previousLine))
+		previousLine = append(previousLine, line)
 	}
 	for o := range vals {
 		for o2 := range vals[o] {
