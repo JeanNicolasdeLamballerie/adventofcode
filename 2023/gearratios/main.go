@@ -77,6 +77,7 @@ func main() {
 			if lineNum == 28 {
 				println("first faulty line")
 			}
+			hasRun := false
 			for idx := range vals[lineNum] {
 				// if lineNum == 28 && string(vals[lineNum][idx].value) == "807" {
 				// 	println("faulty value")
@@ -89,9 +90,11 @@ func main() {
 					if i > len(previousLine[ind])-1 {
 						continue
 					}
-					if lineNum == 28 && string(vals[lineNum][idx].value) == "807" {
-						println("len ", len(previousLine))
-						println("accessing previousline ", ind, "==>", string(previousLine[ind]))
+
+					if lineNum == 28 && string(vals[lineNum][idx].value) == "807" && !hasRun {
+						// println("len ", len(previousLine))
+						println("accessing previousline index :", ind, "==>", string(previousLine[ind]))
+						hasRun = true
 					}
 					// My worst mistake, and a dumb one of course :
 					// I didn't realie 47 was /...
@@ -103,12 +106,16 @@ func main() {
 				}
 			}
 		}
+
 		lineNum++
 		ind++
+
 		// println(lineNum, string(previousLine))
 		// println("appending line", lineNum)
 		// println(len(previousLine))
 		previousLine = append(previousLine, line)
+
+		println("line nr:", ind, "=>", string(previousLine[ind]))
 	}
 	for o := range vals {
 		for o2 := range vals[o] {
